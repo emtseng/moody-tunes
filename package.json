@@ -1,0 +1,37 @@
+{
+  "name": "moody-tunes",
+  "version": "1.0.0",
+  "description": "An update to the moody-tunes app",
+  "main": "./server/app.js",
+  "scripts": {
+    "start": "nodemon ./server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emtseng/moody-tunes"
+  },
+  "author": "@emtseng",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "body-parser": "^1.17.2",
+    "css-loader": "^0.28.4",
+    "express": "^4.15.3",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "lyric-get": "^1.0.3",
+    "morgan": "^1.8.2",
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0",
+    "path": "^0.12.7",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
+    "sass-loader": "^6.0.6",
+    "victory": "^0.21.3",
+    "webpack": "^3.4.1"
+  }
+}

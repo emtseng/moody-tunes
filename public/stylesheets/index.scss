@@ -1,0 +1,190 @@
+// CSS Reset
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin: 0.66em;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ----- PROJECT STYLING ----- */
+
+$nav-footer-color: #9E0000;
+$corpus-block-color: white;
+$vizblock-color: white;
+$active-link-color: #1b3a6b;
+$subnav-color: white;
+$loader-color: rgba(0,0,0,.1);
+$interior-margin: 40px 20px;
+$vizblock-margin: 30px 20px;
+$interior-text-color: darkslategray;
+
+html, body {
+	height: 100%;
+	font-family: 'Montserrat', sans-serif
+}
+
+#rootBox {
+	display: flex;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0
+}
+
+.flexcontainer-horizontal {
+  display: -webkit-flex;
+  display: flex;
+	-webkit-flex-direction: row;
+  flex-direction: row;
+	justify-content: space-between;
+	align-items: stretch
+}
+
+.flexcontainer-vertical {
+  display: -webkit-flex;
+  display: flex;
+	-webkit-flex-direction: column;
+  flex-direction: column;
+	align-items: space-between
+}
+
+#appBlock {
+	height: 100%;
+	width: 100%;
+	display: inline-flex;
+	color: $interior-text-color;
+}
+
+nav {
+	padding: 10px 5px 5px 5px;
+	background-color: $nav-footer-color;
+	color: white;
+	display: inline-flex;
+	#title {
+		margin: 5px 0 5px 20px;
+		font-family: 'Fugaz One'
+	}
+}
+
+#corpusBlock {
+	background-color: $corpus-block-color;
+	margin: $interior-margin;
+	h4, h6 {
+		margin: 0 0 10px 0
+	}
+	textarea {
+		min-width: 100%;
+		height: 400px;
+		border: 0px solid;
+		margin-top: 20px
+	}
+	.buttonContainer {
+		width: 100%;
+		button {
+			margin-top: 15px;
+		}
+	}
+}
+
+#loginBlock {
+	margin: 100px 20px 40px 20px;
+	height: 560px; //TODO: fix this
+	#start {
+		font-family: 'Fugaz One'
+	}
+	h3 {
+		margin: 0 0 30px 0;
+		text-align: center
+	}
+	.login-button-container {
+		width: 500px;
+		align-self: center;
+		#login-button {
+			align-self: center
+		}
+	}
+}
+
+#vizBlock {
+	background-color: $vizblock-color;
+	margin: $vizblock-margin;
+	padding: 20px;
+	#vizTitle {
+		h4 {
+			margin: 0 0 15px 0
+		}
+	}
+	.buttonContainer {
+		width: 100%;
+		margin: 0 0 15px 0;
+	}
+}
+
+.loader {
+	background-color: $loader-color;
+	height: 100%;
+	width: 100%;
+}
+
+#footerBlock {
+	background-color: $nav-footer-color;
+	color: $subnav-color;
+	padding: 5px;
+	display: inline-flex;
+	flex-grow: 1;
+}
+
+a {
+	color: $subnav-color;
+	:link {
+		color: $subnav-color
+	}
+	:visited {
+		color: $subnav-color
+	}
+	:hover {
+		color: $active-link-color
+	}
+	:active {
+		color: $subnav-color
+	}
+}
