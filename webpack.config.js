@@ -1,6 +1,7 @@
 const path = require('path');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const ExtendedDefinePlugin = require('extended-define-webpack-plugin');
 
 module.exports = {
   entry: './app/index.js',
@@ -31,7 +32,7 @@ module.exports = {
   plugins: [
     new LiveReloadPlugin({ appendScriptTag: true }),
     new ExtractTextPlugin('styles.css'),
-    new DefinePlugin({
+    new ExtendedDefinePlugin({
       'process.env': {
         'GOOGLE_KEY': JSON.stringify(process.env.GOOGLE_KEY),
         'SPOTIFY_CLIENT_ID': JSON.stringify(process.env.GOOGLE_KEY),
