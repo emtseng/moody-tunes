@@ -12,7 +12,6 @@ class App extends Component {
     this.getHashParams = this.getHashParams.bind(this)
   }
   render() {
-    console.log("this.props", this.props)
     return (
       <div>
       { this.props.isLoggedIntoSpotify ? (
@@ -35,7 +34,6 @@ class App extends Component {
       access_token = params.access_token,
       state = params.state,
       storedSpotifyState = window.localStorage['spotifyAuthKey']
-    console.log("params", params)
     if (!access_token && (state == null || state !== storedSpotifyState)) {
       console.log('There was an error during Spotify authentication :(')
     } else {

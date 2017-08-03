@@ -29,6 +29,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new LiveReloadPlugin({ appendScriptTag: true })
+    new LiveReloadPlugin({ appendScriptTag: true }),
+    new ExtractTextPlugin('styles.css')
   ]
 };
