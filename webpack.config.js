@@ -30,6 +30,14 @@ module.exports = {
   },
   plugins: [
     new LiveReloadPlugin({ appendScriptTag: true }),
-    new ExtractTextPlugin('styles.css')
+    new ExtractTextPlugin('styles.css'),
+    new DefinePlugin({
+      'process.env': {
+        'GOOGLE_KEY': JSON.stringify(process.env.GOOGLE_KEY),
+        'SPOTIFY_CLIENT_ID': JSON.stringify(process.env.GOOGLE_KEY),
+        'SPOTIFY_CLIENT_SECRET': JSON.stringify(process.env.SPOTIFY_CLIENT_SECRET),
+        'SPOTIFY_REDIRECT_URI': JSON.stringify(process.env.SPOTIFY_REDIRECT_URI)
+      }
+    })
   ]
 };
