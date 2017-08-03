@@ -2,7 +2,7 @@
 
 Moody Tunes is an interactive data visualizer that plots the sentiment of your current Spotify track over time.
 
-Moody Tunes was initially built over a weekend hackathon at Fullstack Academy. It was then refactored and is currently both stable and [deployed on Heroku](moody-tunes-redux.herokuapp.com).
+Moody Tunes was initially built over a weekend hackathon at Fullstack Academy. It was then refactored and is currently both stable and [deployed on Heroku](https://moody-tunes-redux.herokuapp.com).
 
 From time to time I update Moody Tunes to do more things. It's a pet project and a useful playground for any API under the sun. Enjoy!
 
