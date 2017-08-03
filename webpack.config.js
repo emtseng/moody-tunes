@@ -35,7 +35,7 @@ module.exports = {
     new ExtendedDefinePlugin({
       'process.env': {
         'GOOGLE_KEY': JSON.stringify(process.env.GOOGLE_KEY),
-        'SPOTIFY_CLIENT_ID': JSON.stringify(process.env.GOOGLE_KEY),
+        'SPOTIFY_CLIENT_ID': JSON.stringify(process.env.SPOTIFY_CLIENT_ID),
         'SPOTIFY_CLIENT_SECRET': JSON.stringify(process.env.SPOTIFY_CLIENT_SECRET),
         'SPOTIFY_REDIRECT_URI': JSON.stringify(process.env.SPOTIFY_REDIRECT_URI)
       }
