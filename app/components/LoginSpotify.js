@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-const spotifyClientId = process.env.SPOTIFY_CLIENT_ID || require('../../secrets.js').spotifyClientId
-const spotifyRedirectURI = process.env.SPOTIFY_REDIRECT_URI || require('../../secrets.js').spotifyRedirectURI
+const spotifyClientId = process.env.SPOTIFY_CLIENT_ID.replace(/"/g, '') || require('../../secrets.js').spotifyClientId
+const spotifyRedirectURI = process.env.SPOTIFY_REDIRECT_URI.replace(/"/g, '') || require('../../secrets.js').spotifyRedirectURI
 
 export default class LoginSpotify extends Component {
   constructor() {
@@ -38,5 +38,6 @@ export default class LoginSpotify extends Component {
     window.localStorage['spotifyAuthKey'] = this.generateRandomString(16)
     const url = `https://accounts.spotify.com/authorize?response_type=token&client_id=${encodeURIComponent(spotifyClientId)}&scope=${encodeURIComponent('user-read-currently-playing')}&redirect_uri=${encodeURIComponent(spotifyRedirectURI)}&state=${encodeURIComponent(localStorage['spotifyAuthKey'])}`
     window.location = url
+    console.log(url)
   }
 }
