@@ -1,3 +1,5 @@
 node_modules
-bundle.js*
+PSD
+bundle.js
+bundle.js.map
 secrets.js
