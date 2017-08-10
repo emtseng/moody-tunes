@@ -90,17 +90,50 @@ table {
   #sidebar h1 {
     margin-bottom: 1em;
     color: white; }
-  #sidebar .sidebar-btn {
-    width: 100%;
-    border: none;
-    padding: 1em;
-    margin: 2em 0;
-    font-size: 1em; }
   #sidebar .sidebar-info h1 {
     margin: 1em 0; }
   #sidebar button {
     background-color: #800C0C;
     color: white;
-    margin-bottom: 2em; }
+    margin-bottom: 2em;
+    width: 100%;
+    border: none;
+    padding: 1em;
+    margin: 2em 0;
+    font-size: 1em; }
+
+#loginContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 10em; }
+  #loginContainer #loginInfo {
+    text-align: right;
+    width: 45%; }
+    #loginContainer #loginInfo h1 {
+      margin-bottom: 1em; }
+    #loginContainer #loginInfo p {
+      margin-bottom: 1em; }
+      #loginContainer #loginInfo p a {
+        font-size: 1em; }
+  #loginContainer hr {
+    margin: 0 5em; }
+  #loginContainer #loginBlock {
+    width: 45%; }
+    #loginContainer #loginBlock p {
+      margin-bottom: 1em; }
+    #loginContainer #loginBlock button {
+      background-color: #800C0C;
+      color: white;
+      margin-bottom: 2em;
+      width: 100%;
+      border: none;
+      padding: 1em;
+      margin: 2em 0;
+      font-size: 1em; }
 
 /*# sourceMappingURL=styles.css.map*/

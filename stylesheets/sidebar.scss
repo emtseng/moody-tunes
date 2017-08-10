@@ -17,13 +17,6 @@ $textcolor: white;
     margin-bottom: 1em;
     color: $textcolor;
   }
-  .sidebar-btn {
-    width: 100%;
-    border: none;
-    padding: 1em;
-    margin: 2em 0;
-    font-size: 1em;
-  }
   .sidebar-info {
     h1 {
       margin: 1em 0;
@@ -33,5 +26,10 @@ $textcolor: white;
     background-color: $bgcolor-light;
     color: $textcolor;
     margin-bottom: 2em;
+    width: 100%;
+    border: none;
+    padding: 1em;
+    margin: 2em 0;
+    font-size: 1em;
   }
 }

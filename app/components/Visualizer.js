@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { VictoryChart, VictoryTheme, VictoryVoronoiContainer, VictoryAxis, VictoryScatter, VictoryLine, VictoryTooltip } from 'victory'
+import $ from 'jquery'
 
 /* ----- COMPONENT ----- */
 
@@ -21,6 +22,7 @@ class Visualizer extends Component {
     }
   }
   render() {
+    console.log(this.props)
     return (
       <div id="vizBlock">
         <div id="vizTitle">
@@ -32,11 +34,11 @@ class Visualizer extends Component {
           <VictoryChart
             domainPadding={5}
             theme={VictoryTheme.material}
-            width={400}
-            height={200}
+            width={this.props.chartWidth}
+            height={this.props.chartHeight}
             margin={{ top: 0, bottom: 0, left: 80, right: 40 }}
             padding={{ top: 20, bottom: 20, left: 30, right: 30 }}
-            containerComponent={<VictoryVoronoiContainer />}
+            containerComponent={<VictoryVoronoiContainer responsive={false} />}
             domain={this.domain()}
             animate={{ duration: 500 }}
           >
@@ -104,7 +106,9 @@ import { connect } from 'react-redux'
 const mapStateToProps = (store, ownProps) => ({
   currSong: store.currSong,
   data: store.data,
-  corpus: store.corpus
+  corpus: store.corpus,
+  chartWidth: $(window).width() * .75,
+  chartHeight: $(window).height() * .40
 })
 
 export default connect(mapStateToProps)(Visualizer)
