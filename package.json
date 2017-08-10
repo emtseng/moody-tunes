@@ -5,7 +5,7 @@
   "main": "./app.js",
   "scripts": {
     "start": "webpack & node ./app.js",
-    "start-dev": "webpack -w & nodemon ./app.js"
+    "start-dev": "webpack -w & node ./app.js"
   },
   "repository": {
     "type": "git",

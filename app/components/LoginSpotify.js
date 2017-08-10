@@ -6,16 +6,15 @@ const spotifyRedirectURI = process.env.SPOTIFY_REDIRECT_URI && process.env.SPOTI
 export default class LoginSpotify extends Component {
   render() {
     return (
-      <div id="loginBlock" className="flexcontainer-vertical">
-        <h3 id="start">START</h3>
-        <div className="login-button-container flexcontainer-vertical">
-          <button
-            id="login-button"
-            className="btn btn-success"
-            onClick={this.handleSpotifyLogin}
-          >
-            Log in with Spotify
-        </button>
+      <div>
+        <div id="loginInfo">
+          <h1>MOODY<br />TUNES</h1>
+          <h3>An interactive data visualizer examining the sentimental arc of your current Spotify track.</h3>
+        </div>
+        <div />
+        <div id="loginBlock">
+          <h1>START</h1>
+          <button onClick={this.handleSpotifyLogin} >Log in with Spotify</button>
         </div>
       </div>
     )
