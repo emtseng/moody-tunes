@@ -11,6 +11,7 @@ From time to time I update Moody Tunes to do more things. It's a pet project and
 v2.0
 Aug. 2017
 - Redesigned for flat aesthetic
+- UI switched from three individual actions to one centralized action (grabbing a new song)
 
 ## Installation
 
