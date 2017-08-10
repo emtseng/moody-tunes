@@ -1,0 +1,42 @@
+#loginContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 10em;
+  #loginInfo {
+    text-align: right;
+    width: 45%;
+    h1 {
+      margin-bottom: 1em;
+    }
+    p {
+      margin-bottom: 1em;
+      a {
+        font-size: 1em;
+      }
+    }
+  }
+  hr {
+    margin: 0 5em;
+  }
+  #loginBlock {
+    width: 45%;
+    p {
+      margin-bottom: 1em;
+    }
+    button {
+      background-color: $btnbgcolor;
+      color: $textcolor;
+      margin-bottom: 2em;
+      width: 100%;
+      border: none;
+      padding: 1em;
+      margin: 2em 0;
+      font-size: 1em;
+    }
+  }
+}

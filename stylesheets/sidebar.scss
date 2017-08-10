@@ -1,0 +1,35 @@
+$btnbgcolor: #800C0C;
+$bgcolor: #9A393C;
+$textcolor: white;
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20vw;
+  height: 100vh;
+  background-color: $bgcolor;
+  padding: 3em;
+  p {
+    color: $textcolor;
+  }
+  h1 {
+    margin-bottom: 1em;
+    color: $textcolor;
+  }
+  .sidebar-info {
+    h1 {
+      margin: 1em 0;
+    }
+  }
+  button {
+    background-color: $btnbgcolor;
+    color: $textcolor;
+    margin-bottom: 2em;
+    width: 100%;
+    border: none;
+    padding: 1em;
+    margin: 2em 0;
+    font-size: 1em;
+  }
+}

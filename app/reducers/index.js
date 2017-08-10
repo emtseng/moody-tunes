@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const googleKey = process.env.GOOGLE_KEY.replace(/"/g, '') || require('../../secrets.js').googleKey
+const googleKey = process.env.GOOGLE_KEY && process.env.GOOGLE_KEY.replace(/"/g, '') || require('../../secrets.js').googleKey
 
 /* -----------------    ACTIONS     ------------------ */
 
@@ -26,11 +26,11 @@ const setCurr = (artist, song) => {
 const setToken = token => ({ type: SET_TOKEN, token })
 
 const setCorpus = corpus => {
-  corpus = corpus.replace(/\n\n/g, '\n')
-    .replace(/\n/g, '.\n')
   return {
     type: SET_CORPUS,
-    corpus
+    corpus: corpus.replace(/\n\n/g, '\n')
+    .replace(/\n/g, '.\n'),
+    corpusHTML: corpus.replace(/\n\n/g, '\n').replace(/\n/g, '<br />')
   }
 }
 
@@ -63,6 +63,7 @@ export default (state = {
   currSong: '',
   currArtist: '',
   corpus: '',
+  corpusHTML: '',
   access_token: ''
 }, action) => {
   const newState = Object.assign({}, state)
@@ -79,6 +80,7 @@ export default (state = {
 
     case SET_CORPUS:
       newState.corpus = action.corpus
+      newState.corpusHTML = action.corpusHTML
       break
 
     case SET_CHART_DATA:
@@ -97,10 +99,29 @@ export const storeToken = token => (dispatch) => {
   return dispatch(setToken(token))
 }
 
+export const passCorpusToChart = () => (dispatch, getState) => {
+  const postBody = {
+    "document": {
+      "content": getState().corpus,
+      "language": "EN",
+      "type": "PLAIN_TEXT"
+    },
+    "encodingType": "UTF8"
+  }
+  return axios.post(`https://language.googleapis.com/v1/documents:analyzeSentiment?key=${googleKey}`, postBody)
+    .then(res => {
+      dispatch(setChartData(res.data))
+    })
+    .catch(err => console.error(err))
+}
+
 export const grabLyrics = () => (dispatch, getState) => {
   return axios.get(`/api/lyrics/${encodeURIComponent(getState().currArtist)}/${encodeURIComponent(getState().currSong)}`)
     .then(res => {
       dispatch(setCorpus(res.data.lyric))
+    })
+    .then(() => {
+      dispatch(passCorpusToChart())
     })
     .catch(err => {
       dispatch(setCorpus('Oh no! We can\'t find your song. Try another!'))
@@ -115,14 +136,6 @@ export const grabCurrSong = token => (dispatch, getState) => {
       if (apiArtist !== getState().currArtist || apiSong !== getState().currSong) {
         dispatch(setCurr(apiArtist, apiSong))
         dispatch(grabLyrics())
-      } //TODO: handle else
+      }
     })
-}
-
-export const passCorpusToChart = body => (dispatch) => {
-  return axios.post(`https://language.googleapis.com/v1/documents:analyzeSentiment?key=${googleKey}`, body)
-    .then(res => {
-      dispatch(setChartData(res.data))
-    })
-    .catch(err => console.error(err))
 }

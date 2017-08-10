@@ -6,6 +6,12 @@ Moody Tunes was initially built over a weekend hackathon at Fullstack Academy. I
 
 From time to time I update Moody Tunes to do more things. It's a pet project and a useful playground for any API under the sun. Enjoy!
 
+## Current iteration
+
+v2.0
+Aug. 2017
+- Redesigned for flat aesthetic
+- UI switched from three individual actions to one centralized action (grabbing a new song)
 
 ## Installation
 
@@ -36,7 +42,5 @@ Future versions will:
 - Pull Spotify audio features (metrics like danceability, valence, mood) and visualize this data as separate cards
 - Add a third dimension to the sentimentagram to incorporate the magnitude of each data point
 - Allow users to track sentimentagrams over multiple songs, to visualize the sentiment arc of a playlist, or a day's worth of tunes
-- Style more completely
 
-
-Made with <3 by [@emtseng](https://www.twitter.com/emtseng) at [Fullstack Academy](https://www.fullstackacademy.com).
+Made with <3 by [@emtseng](https://www.twitter.com/emtseng)

@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box; }
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -14,10 +17,14 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+  font-family: 'Montserrat', serif;
+  font-weight: 300;
+  line-height: 1.3em;
+  color: gray; }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0.66em; }
+h1, h2, h3, h4, h5 {
+  font-family: 'Josefin Sans', sans-serif; }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -42,109 +49,91 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* ----- PROJECT STYLING ----- */
-html, body {
-  height: 100%;
-  font-family: 'Montserrat', sans-serif; }
-
-#rootBox {
-  display: flex;
-  position: absolute;
+#contentBlock {
+  position: fixed;
   top: 0;
-  bottom: 0;
   right: 0;
-  left: 0; }
-
-.flexcontainer-horizontal {
-  display: -webkit-flex;
+  width: 80vw;
+  padding: 3em;
   display: flex;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: stretch; }
-
-.flexcontainer-vertical {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
   flex-direction: column;
-  align-items: space-between; }
+  justify-content: flex-start;
+  align-items: flex-start; }
+  #contentBlock #corpusBlock h2 {
+    color: gray;
+    margin-bottom: 0.5em; }
+  #contentBlock #corpusBlock #corpus {
+    overflow: scroll;
+    height: 30vh;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 2em;
+    -moz-column-gap: 2em;
+    column-gap: 2em; }
+  #contentBlock #vizBlock {
+    height: 50vh; }
+    #contentBlock #vizBlock h2 {
+      color: gray;
+      margin-bottom: 0.5em; }
 
-#appBlock {
-  height: 100%;
-  width: 100%;
-  display: inline-flex;
-  color: darkslategray; }
-
-nav {
-  padding: 10px 5px 5px 5px;
-  background-color: #9E0000;
-  color: white;
-  display: inline-flex; }
-  nav #title {
-    margin: 5px 0 5px 20px;
-    font-family: 'Fugaz One'; }
-
-#corpusBlock {
-  background-color: white;
-  margin: 40px 20px; }
-  #corpusBlock h4, #corpusBlock h6 {
-    margin: 0 0 10px 0; }
-  #corpusBlock textarea {
-    min-width: 100%;
-    height: 400px;
-    border: 0px solid;
-    margin-top: 20px; }
-  #corpusBlock .buttonContainer {
-    width: 100%; }
-    #corpusBlock .buttonContainer button {
-      margin-top: 15px; }
-
-#loginBlock {
-  margin: 100px 20px 40px 20px;
-  height: 560px; }
-  #loginBlock #start {
-    font-family: 'Fugaz One'; }
-  #loginBlock h3 {
-    margin: 0 0 30px 0;
-    text-align: center; }
-  #loginBlock .login-button-container {
-    width: 500px;
-    align-self: center; }
-    #loginBlock .login-button-container #login-button {
-      align-self: center; }
-
-#vizBlock {
-  background-color: white;
-  margin: 30px 20px;
-  padding: 20px; }
-  #vizBlock #vizTitle h4 {
-    margin: 0 0 15px 0; }
-  #vizBlock .buttonContainer {
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20vw;
+  height: 100vh;
+  background-color: #9A393C;
+  padding: 3em; }
+  #sidebar p {
+    color: white; }
+  #sidebar h1 {
+    margin-bottom: 1em;
+    color: white; }
+  #sidebar .sidebar-info h1 {
+    margin: 1em 0; }
+  #sidebar button {
+    background-color: #800C0C;
+    color: white;
+    margin-bottom: 2em;
     width: 100%;
-    margin: 0 0 15px 0; }
+    border: none;
+    padding: 1em;
+    margin: 2em 0;
+    font-size: 1em; }
 
-.loader {
-  background-color: rgba(0, 0, 0, 0.1);
-  height: 100%;
-  width: 100%; }
-
-#footerBlock {
-  background-color: #9E0000;
-  color: white;
-  padding: 5px;
-  display: inline-flex;
-  flex-grow: 1; }
-
-a {
-  color: white; }
-  a :link {
-    color: white; }
-  a :visited {
-    color: white; }
-  a :hover {
-    color: #1b3a6b; }
-  a :active {
-    color: white; }
+#loginContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 10em; }
+  #loginContainer #loginInfo {
+    text-align: right;
+    width: 45%; }
+    #loginContainer #loginInfo h1 {
+      margin-bottom: 1em; }
+    #loginContainer #loginInfo p {
+      margin-bottom: 1em; }
+      #loginContainer #loginInfo p a {
+        font-size: 1em; }
+  #loginContainer hr {
+    margin: 0 5em; }
+  #loginContainer #loginBlock {
+    width: 45%; }
+    #loginContainer #loginBlock p {
+      margin-bottom: 1em; }
+    #loginContainer #loginBlock button {
+      background-color: #800C0C;
+      color: white;
+      margin-bottom: 2em;
+      width: 100%;
+      border: none;
+      padding: 1em;
+      margin: 2em 0;
+      font-size: 1em; }
 
 /*# sourceMappingURL=styles.css.map*/
