@@ -1,16 +1,23 @@
+$h2color: gray;
+
 #contentBlock {
   position: fixed;
   top: 0;
   right: 0;
   width: 75vw;
+  padding: 3em 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   #corpusBlock {
+    h2 {
+      color: $h2color;
+      margin-bottom: 0.5em;
+    }
     #corpus {
       overflow: scroll;
-      height: 40vh;
+      height: 30vh;
       -webkit-column-count: 2;
       -moz-column-count: 2;
       column-count: 2;
@@ -19,7 +26,10 @@
       column-gap: 2em;
     }
   }
-}
-
-#vizBlock {
+  #vizBlock {
+    h2 {
+      color: $h2color;
+      margin-bottom: 0.5em;
+    }
+  }
 }

@@ -18,6 +18,11 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
   vertical-align: baseline;
+  font-family: 'Montserrat', serif;
+  font-weight: 300;
+  line-height: 1.3em; }
+
+h1, h2, h3, h4, h5 {
   font-family: 'Josefin Sans', sans-serif; }
 
 /* HTML5 display-role reset for older browsers */
@@ -48,19 +53,26 @@ table {
   top: 0;
   right: 0;
   width: 75vw;
+  padding: 3em 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start; }
+  #contentBlock #corpusBlock h2 {
+    color: gray;
+    margin-bottom: 0.5em; }
   #contentBlock #corpusBlock #corpus {
     overflow: scroll;
-    height: 40vh;
+    height: 30vh;
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
     -webkit-column-gap: 2em;
     -moz-column-gap: 2em;
     column-gap: 2em; }
+  #contentBlock #vizBlock h2 {
+    color: gray;
+    margin-bottom: 0.5em; }
 
 #sidebar {
   position: fixed;
@@ -70,11 +82,17 @@ table {
   height: 100vh;
   background-color: #9A393C;
   color: white;
-  padding: 2em; }
-  #sidebar * {
-    margin: 0; }
+  padding: 3em; }
   #sidebar h1 {
-    margin: 0.5em 0; }
+    margin-bottom: 1em; }
+  #sidebar .sidebar-btn {
+    width: 100%;
+    border: none;
+    padding: 1em;
+    margin: 2em 0;
+    font-size: 1em; }
+  #sidebar .sidebar-info h1 {
+    margin: 1em 0; }
   #sidebar button {
     background-color: #800C0C;
     color: white;

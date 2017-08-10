@@ -5,7 +5,9 @@ class Sidebar extends Component {
     return (
       <div id="sidebar">
         <h1>MOODY<br />TUNES</h1>
+        <p>An interactive visualizer for your current Spotify track.</p>
         <button
+          autoFocus
           className="sidebar-btn"
           onClick={this.props.grabCurrentSong}
         >

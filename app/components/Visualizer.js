@@ -80,7 +80,7 @@ class Visualizer extends Component {
                   style={{
                     fontSize: 8,
                     padding: 5,
-                    fontColor: 'white'
+                    color: 'white'
                   }}
                   flyoutStyle={{
                     stroke: 'none',

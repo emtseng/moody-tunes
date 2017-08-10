@@ -14,8 +14,9 @@ class App extends Component {
             <div id="appBody">
               <Sidebar access={this.props.access_token} />
               <div id="contentBlock">
-                <Corpus />
                 <Visualizer />
+                <hr />
+                <Corpus />
               </div>
             </div>
           ) : <LoginSpotify />
@@ -51,12 +52,10 @@ class App extends Component {
 import { connect } from 'react-redux'
 import { storeToken } from '../reducers'
 
-const mapStateToProps = (store, ownProps) => {
-  return {
-    isLoggedIntoSpotify: store.isLoggedIntoSpotify,
-    access_token: store.access_token
-  }
-}
+const mapStateToProps = (store, ownProps) => ({
+  isLoggedIntoSpotify: store.isLoggedIntoSpotify,
+  access_token: store.access_token
+})
 
 const mapDispatchToProps = (dispatch, getState) => ({
   saveToken: (token) => {
