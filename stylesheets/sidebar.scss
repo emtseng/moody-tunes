@@ -9,10 +9,13 @@ $textcolor: white;
   width: 20vw;
   height: 100vh;
   background-color: $bgcolor-dark;
-  color: $textcolor;
   padding: 3em;
+  p {
+    color: $textcolor;
+  }
   h1 {
     margin-bottom: 1em;
+    color: $textcolor;
   }
   .sidebar-btn {
     width: 100%;

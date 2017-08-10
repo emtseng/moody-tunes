@@ -14,9 +14,9 @@ class Sidebar extends Component {
           GET CURRENT SONG
         </button>
         <div className="sidebar-info">
-          <h3>you're listening to</h3>
+          <p>you're listening to</p>
           <h1>{this.props.currSong || 'TBD'}</h1>
-          <h3>by</h3>
+          <p>by</p>
           <h1>{this.props.currArtist || 'TBD'}</h1>
         </div>
       </div>

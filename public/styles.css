@@ -20,7 +20,8 @@ time, mark, audio, video {
   vertical-align: baseline;
   font-family: 'Montserrat', serif;
   font-weight: 300;
-  line-height: 1.3em; }
+  line-height: 1.3em;
+  color: gray; }
 
 h1, h2, h3, h4, h5 {
   font-family: 'Josefin Sans', sans-serif; }
@@ -70,9 +71,11 @@ table {
     -webkit-column-gap: 2em;
     -moz-column-gap: 2em;
     column-gap: 2em; }
-  #contentBlock #vizBlock h2 {
-    color: gray;
-    margin-bottom: 0.5em; }
+  #contentBlock #vizBlock {
+    height: 50vh; }
+    #contentBlock #vizBlock h2 {
+      color: gray;
+      margin-bottom: 0.5em; }
 
 #sidebar {
   position: fixed;
@@ -81,10 +84,12 @@ table {
   width: 20vw;
   height: 100vh;
   background-color: #9A393C;
-  color: white;
   padding: 3em; }
+  #sidebar p {
+    color: white; }
   #sidebar h1 {
-    margin-bottom: 1em; }
+    margin-bottom: 1em;
+    color: white; }
   #sidebar .sidebar-btn {
     width: 100%;
     border: none;
