@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { VictoryChart, VictoryTheme, VictoryVoronoiContainer, VictoryAxis, VictoryScatter, VictoryLine, VictoryTooltip } from 'victory'
 
+/* ----- COMPONENT ----- */
+
 class Visualizer extends Component {
   docLength = (arr) => {
     let max = 0
@@ -95,12 +97,9 @@ class Visualizer extends Component {
   }
 }
 
-/* ----- IMPORT CONTAINER DEPENDENCIES ----- */
+/* ----- CONTAINER ----- */
 
 import { connect } from 'react-redux'
-import { passCorpusToChart } from '../reducers'
-
-/* ----- CONTAINER ----- */
 
 const mapStateToProps = (store, ownProps) => ({
   currSong: store.currSong,

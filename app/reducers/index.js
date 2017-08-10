@@ -109,9 +109,11 @@ export const grabLyrics = () => (dispatch, getState) => {
   return axios.get(`/api/lyrics/${encodeURIComponent(getState().currArtist)}/${encodeURIComponent(getState().currSong)}`)
     .then(res => {
       dispatch(setCorpus(res.data.lyric))
+    })
+    .then(() => {
       dispatch(passCorpusToChart({
         "document": {
-          "content": res.data.lyric,
+          "content": getState().corpus,
           "language": "EN",
           "type": "PLAIN_TEXT"
         },
