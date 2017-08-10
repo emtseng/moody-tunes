@@ -2,30 +2,21 @@ import React, { Component } from 'react'
 
 import Corpus from './Corpus'
 import Visualizer from './Visualizer'
-import LoginSpotify from './LoginSpotify.js'
-
-/* ----- COMPONENT ----- */
+import LoginSpotify from './LoginSpotify'
+import Sidebar from './Sidebar'
 
 class App extends Component {
-  constructor() {
-    super()
-    this.getHashParams = this.getHashParams.bind(this)
-  }
   render() {
     return (
-      <div>
-      { this.props.isLoggedIntoSpotify ? (
-        <div id="appBlock" className="flexcontainer-horizontal">
-          <div className="col-md-4">
-            <Corpus access={this.props.access_token} />
-          </div>
-          <div className="col-md-8">
-            <Visualizer />
-          </div>
+      <div id="appBody">
+        {
+          this.props.isLoggedIntoSpotify ? null : <LoginSpotify />
+        }
+        <Sidebar />
+        <div id="appBlock">
+          <Corpus access={this.props.access_token} />
+          <Visualizer />
         </div>
-      ) : (
-          <LoginSpotify />
-      ) }
       </div>
     )
   }
@@ -40,7 +31,7 @@ class App extends Component {
       return this.props.saveToken(access_token)
     }
   }
-  getHashParams() {
+  getHashParams = () => {
     let hashParams = {},
       e,
       regQuery = /([^&;=]+)=?([^&;]*)/g,
