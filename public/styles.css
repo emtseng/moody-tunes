@@ -64,13 +64,7 @@ table {
     margin-bottom: 0.5em; }
   #contentBlock #corpusBlock #corpus {
     overflow: scroll;
-    height: 30vh;
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
-    -webkit-column-gap: 2em;
-    -moz-column-gap: 2em;
-    column-gap: 2em; }
+    height: 30vh; }
   #contentBlock #vizBlock {
     height: 50vh; }
     #contentBlock #vizBlock h2 {
