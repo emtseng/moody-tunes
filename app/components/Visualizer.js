@@ -1,67 +1,45 @@
 import React, { Component } from 'react'
 import { VictoryChart, VictoryTheme, VictoryVoronoiContainer, VictoryAxis, VictoryScatter, VictoryLine, VictoryTooltip } from 'victory'
+import $ from 'jquery'
+
+/* ----- COMPONENT ----- */
 
 class Visualizer extends Component {
-  constructor() {
-    super()
-    this.docLength = this.docLength.bind(this)
-    this.domainX = this.domainX.bind(this)
-    this.domain = this.domain.bind(this)
-    this.generateGram = this.generateGram.bind(this)
-  }
-  docLength(arr) {
+  docLength = (arr) => {
     let max = 0
     arr.forEach(obj => {
       if (obj.x > max) max = obj.x
     })
     return max
   }
-  domainX() {
+  domainX = () => {
     return [-1, this.docLength(this.props.data.sentences)]
   }
-  domain() {
+  domain = () => {
     return {
       x: this.props.data.sentences ? this.domainX() : [-1, 10],
       y: [-1, 1]
     }
   }
-  generateGram(evt) {
-    evt.preventDefault()
-    const postBody = {
-      "document": {
-        "content": this.props.corpus,
-        "language": "EN",
-        "type": "PLAIN_TEXT"
-      },
-      "encodingType": "UTF8"
-    }
-    return this.props.queryCorpus(postBody)
-  }
   render() {
     return (
-      <div className="flexcontainer-vertical z-depth-2" id="vizBlock">
-        <div className="text-center" id="vizTitle">
-          <h6>this is {this.props.currSong}'s</h6>
-          <h4>sentimentagram</h4>
-          <div className="buttonContainer">
-            <button
-              className="btn btn-success"
-              onClick={this.generateGram}
-            >
-              Generate
-            </button>
-          </div>
-          <h6>This visualizer shows the progression of lyrical sentiment in your song over time.<br></br>Hover over a dot to see the line that generated it, and what Google thinks of its sentiment.</h6>
+      <div id="vizBlock">
+        <div id="vizTitle">
+          <h2>VISUALIZER</h2>
+          <p>This is a sentimentagram showing the progression of lyrical sentiment over time in {this.props.currSong || 'your song'}.</p>
+          <p>Hover over a dot to see the line that generated it, and what Google thinks of its sentiment.</p>
         </div>
-        <div id="vizChart">
+        {
+          this.props.currSong ? (
+                    <div id="vizChart">
           <VictoryChart
             domainPadding={5}
             theme={VictoryTheme.material}
-            width={400}
-            height={200}
+            width={this.props.chartWidth}
+            height={this.props.chartHeight}
             margin={{ top: 0, bottom: 0, left: 80, right: 40 }}
             padding={{ top: 20, bottom: 20, left: 30, right: 30 }}
-            containerComponent={<VictoryVoronoiContainer />}
+            containerComponent={<VictoryVoronoiContainer responsive={false} />}
             domain={this.domain()}
             animate={{ duration: 500 }}
           >
@@ -103,13 +81,13 @@ class Visualizer extends Component {
                 <VictoryTooltip
                   cornerRadius={1}
                   style={{
-                    fontSize: 8,
+                    fontSize: 20,
                     padding: 5,
-                    fontColor: 'white'
+                    fill: '#FFFFFF'
                   }}
                   flyoutStyle={{
                     stroke: 'none',
-                    fill: '#D3767F'
+                    fill: '#9A393C'
                   }}
                 />
               }
@@ -117,28 +95,23 @@ class Visualizer extends Component {
             />
           </VictoryChart>
         </div>
+          ) : null
+        }
       </div>
     )
   }
 }
 
-/* ----- IMPORT CONTAINER DEPENDENCIES ----- */
+/* ----- CONTAINER ----- */
 
 import { connect } from 'react-redux'
-import { passCorpusToChart } from '../reducers'
-
-/* ----- CONTAINER ----- */
 
 const mapStateToProps = (store, ownProps) => ({
   currSong: store.currSong,
   data: store.data,
-  corpus: store.corpus
+  corpus: store.corpus,
+  chartWidth: $(window).width() * .75,
+  chartHeight: $(window).height() * .40
 })
 
-const mapDispatchToProps = (dispatch, getState) => ({
-  queryCorpus: (body) => {
-    dispatch(passCorpusToChart(body))
-  }
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Visualizer)
+export default connect(mapStateToProps)(Visualizer)
