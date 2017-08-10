@@ -8,7 +8,7 @@ import Sidebar from './Sidebar'
 class App extends Component {
   render() {
     return (
-      <div id="appBody">
+      <div>
         {
           this.props.isLoggedIntoSpotify ? (
             <div id="appBody">

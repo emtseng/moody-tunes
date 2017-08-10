@@ -1,11 +1,25 @@
 $bgcolor-light: #800C0C;
 $bgcolor-dark: #9A393C;
+$textcolor: white;
 
 #sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20vw;
+  height: 100vh;
   background-color: $bgcolor-dark;
-  color: white;
+  color: $textcolor;
+  * {
+    margin: 0;
+  }
+  padding: 2em;
+  h1 {
+    margin: 0.5em 0;
+  }
   button {
     background-color: $bgcolor-light;
-    color: white;
+    color: $textcolor;
+    margin-bottom: 2em;
   }
 }

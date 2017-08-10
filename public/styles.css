@@ -45,11 +45,32 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+#contentBlock {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start; }
+
 #sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20vw;
+  height: 100vh;
   background-color: #9A393C;
-  color: white; }
+  color: white;
+  padding: 2em; }
+  #sidebar * {
+    margin: 0; }
+  #sidebar h1 {
+    margin: 0.5em 0; }
   #sidebar button {
     background-color: #800C0C;
-    color: white; }
+    color: white;
+    margin-bottom: 2em; }
 
 /*# sourceMappingURL=styles.css.map*/
