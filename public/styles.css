@@ -53,8 +53,8 @@ table {
   position: fixed;
   top: 0;
   right: 0;
-  width: 75vw;
-  padding: 3em 0;
+  width: 80vw;
+  padding: 3em;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

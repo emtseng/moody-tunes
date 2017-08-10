@@ -29,7 +29,9 @@ class Visualizer extends Component {
           <p>This is a sentimentagram showing the progression of lyrical sentiment over time in {this.props.currSong || 'your song'}.</p>
           <p>Hover over a dot to see the line that generated it, and what Google thinks of its sentiment.</p>
         </div>
-        <div id="vizChart">
+        {
+          this.props.currSong ? (
+                    <div id="vizChart">
           <VictoryChart
             domainPadding={5}
             theme={VictoryTheme.material}
@@ -79,9 +81,9 @@ class Visualizer extends Component {
                 <VictoryTooltip
                   cornerRadius={1}
                   style={{
-                    fontSize: 8,
+                    fontSize: 20,
                     padding: 5,
-                    color: 'white'
+                    fill: '#FFFFFF'
                   }}
                   flyoutStyle={{
                     stroke: 'none',
@@ -93,6 +95,8 @@ class Visualizer extends Component {
             />
           </VictoryChart>
         </div>
+          ) : null
+        }
       </div>
     )
   }
