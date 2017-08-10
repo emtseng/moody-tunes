@@ -1,0 +1,11 @@
+$bgcolor-light: #800C0C;
+$bgcolor-dark: #9A393C;
+
+#sidebar {
+  background-color: $bgcolor-dark;
+  color: white;
+  button {
+    background-color: $bgcolor-light;
+    color: white;
+  }
+}
