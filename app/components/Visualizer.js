@@ -87,7 +87,7 @@ class Visualizer extends Component {
                   }}
                   flyoutStyle={{
                     stroke: 'none',
-                    fill: '#D3767F'
+                    fill: '#9A393C'
                   }}
                 />
               }
