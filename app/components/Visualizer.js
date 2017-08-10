@@ -2,30 +2,23 @@ import React, { Component } from 'react'
 import { VictoryChart, VictoryTheme, VictoryVoronoiContainer, VictoryAxis, VictoryScatter, VictoryLine, VictoryTooltip } from 'victory'
 
 class Visualizer extends Component {
-  constructor() {
-    super()
-    this.docLength = this.docLength.bind(this)
-    this.domainX = this.domainX.bind(this)
-    this.domain = this.domain.bind(this)
-    this.generateGram = this.generateGram.bind(this)
-  }
-  docLength(arr) {
+  docLength = (arr) => {
     let max = 0
     arr.forEach(obj => {
       if (obj.x > max) max = obj.x
     })
     return max
   }
-  domainX() {
+  domainX = () => {
     return [-1, this.docLength(this.props.data.sentences)]
   }
-  domain() {
+  domain = () => {
     return {
       x: this.props.data.sentences ? this.domainX() : [-1, 10],
       y: [-1, 1]
     }
   }
-  generateGram(evt) {
+  generateGram = (evt) => {
     evt.preventDefault()
     const postBody = {
       "document": {

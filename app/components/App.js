@@ -10,13 +10,16 @@ class App extends Component {
     return (
       <div id="appBody">
         {
-          this.props.isLoggedIntoSpotify ? null : <LoginSpotify />
+          this.props.isLoggedIntoSpotify ? (
+            <div id="appBody">
+              <Sidebar />
+              <div id="contentBlock">
+                <Corpus access={this.props.access_token} />
+                <Visualizer />
+              </div>
+            </div>
+          ) : <LoginSpotify />
         }
-        <Sidebar />
-        <div id="appBlock">
-          <Corpus access={this.props.access_token} />
-          <Visualizer />
-        </div>
       </div>
     )
   }

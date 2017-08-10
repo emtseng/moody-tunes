@@ -4,7 +4,8 @@
   "description": "An update to the moody-tunes app",
   "main": "./app.js",
   "scripts": {
-    "start": "webpack && node ./app.js"
+    "start": "webpack & node ./app.js",
+    "start-dev": "webpack -w & nodemon ./app.js"
   },
   "repository": {
     "type": "git",
@@ -41,5 +42,8 @@
     "victory": "^0.21.3",
     "webpack": "^3.4.1",
     "webpack-livereload-plugin": "^0.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
