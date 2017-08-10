@@ -18,32 +18,12 @@ class Visualizer extends Component {
       y: [-1, 1]
     }
   }
-  generateGram = (evt) => {
-    evt.preventDefault()
-    const postBody = {
-      "document": {
-        "content": this.props.corpus,
-        "language": "EN",
-        "type": "PLAIN_TEXT"
-      },
-      "encodingType": "UTF8"
-    }
-    return this.props.queryCorpus(postBody)
-  }
   render() {
     return (
       <div className="flexcontainer-vertical z-depth-2" id="vizBlock">
         <div className="text-center" id="vizTitle">
           <h6>this is {this.props.currSong}'s</h6>
           <h4>sentimentagram</h4>
-          <div className="buttonContainer">
-            <button
-              className="btn btn-success"
-              onClick={this.generateGram}
-            >
-              Generate
-            </button>
-          </div>
           <h6>This visualizer shows the progression of lyrical sentiment in your song over time.<br></br>Hover over a dot to see the line that generated it, and what Google thinks of its sentiment.</h6>
         </div>
         <div id="vizChart">
@@ -128,10 +108,4 @@ const mapStateToProps = (store, ownProps) => ({
   corpus: store.corpus
 })
 
-const mapDispatchToProps = (dispatch, getState) => ({
-  queryCorpus: (body) => {
-    dispatch(passCorpusToChart(body))
-  }
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Visualizer)
+export default connect(mapStateToProps)(Visualizer)
