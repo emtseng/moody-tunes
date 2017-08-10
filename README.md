@@ -41,7 +41,5 @@ Future versions will:
 - Pull Spotify audio features (metrics like danceability, valence, mood) and visualize this data as separate cards
 - Add a third dimension to the sentimentagram to incorporate the magnitude of each data point
 - Allow users to track sentimentagrams over multiple songs, to visualize the sentiment arc of a playlist, or a day's worth of tunes
-- Style more completely
 
-
-Made with <3 by [@emtseng](https://www.twitter.com/emtseng) at [Fullstack Academy](https://www.fullstackacademy.com).
+Made with <3 by [@emtseng](https://www.twitter.com/emtseng)

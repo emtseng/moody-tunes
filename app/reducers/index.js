@@ -99,13 +99,13 @@ export const storeToken = token => (dispatch) => {
 
 export const passCorpusToChart = () => (dispatch, getState) => {
   const postBody = {
-        "document": {
-          "content": getState().corpus,
-          "language": "EN",
-          "type": "PLAIN_TEXT"
-        },
-        "encodingType": "UTF8"
-      }
+    "document": {
+      "content": getState().corpus,
+      "language": "EN",
+      "type": "PLAIN_TEXT"
+    },
+    "encodingType": "UTF8"
+  }
   return axios.post(`https://language.googleapis.com/v1/documents:analyzeSentiment?key=${googleKey}`, postBody)
     .then(res => {
       dispatch(setChartData(res.data))
