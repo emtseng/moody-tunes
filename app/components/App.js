@@ -12,9 +12,9 @@ class App extends Component {
         {
           this.props.isLoggedIntoSpotify ? (
             <div id="appBody">
-              <Sidebar />
+              <Sidebar access={this.props.access_token} />
               <div id="contentBlock">
-                <Corpus access={this.props.access_token} />
+                <Corpus />
                 <Visualizer />
               </div>
             </div>

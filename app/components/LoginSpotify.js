@@ -13,7 +13,7 @@ export default class LoginSpotify extends Component {
         </div>
         <div />
         <div id="loginBlock">
-          <h1>START</h1>
+          <h3>START</h3>
           <button onClick={this.handleSpotifyLogin} >Log in with Spotify</button>
         </div>
       </div>
@@ -32,6 +32,5 @@ export default class LoginSpotify extends Component {
     window.localStorage['spotifyAuthKey'] = this.generateRandomString(16)
     const url = `https://accounts.spotify.com/authorize?response_type=token&client_id=${encodeURIComponent(spotifyClientId)}&scope=${encodeURIComponent('user-read-currently-playing')}&redirect_uri=${encodeURIComponent(spotifyRedirectURI)}&state=${encodeURIComponent(localStorage['spotifyAuthKey'])}`
     window.location = url
-    console.log(url)
   }
 }

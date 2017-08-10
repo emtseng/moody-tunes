@@ -5,12 +5,12 @@ class Sidebar extends Component {
     return (
       <div id="sidebar">
         <h1>MOODY<br />TUNES</h1>
-        <div
+        <button
           className="sidebar-btn"
           onClick={this.props.grabCurrentSong}
         >
-          <h1>GET CURRENT SONG</h1>
-        </div>
+          GET CURRENT SONG
+        </button>
         <div className="sidebar-info">
           <h3>you're listening to</h3>
           <h1>{this.props.currSong || 'TBD'}</h1>
