@@ -22,11 +22,11 @@ class Visualizer extends Component {
   }
   render() {
     return (
-      <div className="flexcontainer-vertical z-depth-2" id="vizBlock">
-        <div className="text-center" id="vizTitle">
-          <h6>this is {this.props.currSong}'s</h6>
-          <h4>sentimentagram</h4>
-          <h6>This visualizer shows the progression of lyrical sentiment in your song over time.<br></br>Hover over a dot to see the line that generated it, and what Google thinks of its sentiment.</h6>
+      <div id="vizBlock">
+        <div id="vizTitle">
+          <h2>VISUALIZER</h2>
+          <p>This is a sentimentagram showing the progression of lyrical sentiment over time in {this.props.currSong || 'your song'}.</p>
+          <p>Hover over a dot to see the line that generated it, and what Google thinks of its sentiment.</p>
         </div>
         <div id="vizChart">
           <VictoryChart

@@ -46,12 +46,10 @@ class App extends Component {
   }
 }
 
-/* ----- IMPORT CONTAINER DEPENDENCIES ----- */
+/* ----- CONTAINER ----- */
 
 import { connect } from 'react-redux'
 import { storeToken } from '../reducers'
-
-/* ----- CONTAINER ----- */
 
 const mapStateToProps = (store, ownProps) => {
   return {

@@ -26,11 +26,11 @@ const setCurr = (artist, song) => {
 const setToken = token => ({ type: SET_TOKEN, token })
 
 const setCorpus = corpus => {
-  corpus = corpus.replace(/\n\n/g, '\n')
-    .replace(/\n/g, '.\n')
   return {
     type: SET_CORPUS,
-    corpus
+    corpus: corpus.replace(/\n\n/g, '\n')
+    .replace(/\n/g, '.\n'),
+    corpusHTML: corpus.replace(/\n\n/g, '\n').replace(/\n/g, '<br />')
   }
 }
 
@@ -63,6 +63,7 @@ export default (state = {
   currSong: '',
   currArtist: '',
   corpus: '',
+  corpusHTML: '',
   access_token: ''
 }, action) => {
   const newState = Object.assign({}, state)
@@ -79,6 +80,7 @@ export default (state = {
 
     case SET_CORPUS:
       newState.corpus = action.corpus
+      newState.corpusHTML = action.corpusHTML
       break
 
     case SET_CHART_DATA:
