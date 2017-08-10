@@ -6,6 +6,11 @@ Moody Tunes was initially built over a weekend hackathon at Fullstack Academy. I
 
 From time to time I update Moody Tunes to do more things. It's a pet project and a useful playground for any API under the sun. Enjoy!
 
+## Current iteration
+
+v2.0
+Aug. 2017
+- Redesigned for flat aesthetic
 
 ## Installation
 

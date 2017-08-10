@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const ExtendedDefinePlugin = require('extended-define-webpack-plugin');
 
 module.exports = {
-  entry: './app/index.js',
+  entry: ['./app/index.js', './stylesheets/index.scss'],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public')
@@ -31,7 +31,10 @@ module.exports = {
   },
   plugins: [
     new LiveReloadPlugin({ appendScriptTag: true }),
-    new ExtractTextPlugin('styles.css'),
+    new ExtractTextPlugin({
+      filename: 'styles.css',
+      allChunks: true
+    }),
     new ExtendedDefinePlugin({
       'process.env': {
         'GOOGLE_KEY': JSON.stringify(process.env.GOOGLE_KEY),
