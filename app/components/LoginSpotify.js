@@ -30,7 +30,6 @@ export default class LoginSpotify extends Component {
     return text
   }
   handleSpotifyLogin = (evt) => {
-    console.log('redirect', spotifyRedirectURI)
     evt.preventDefault()
     window.localStorage['spotifyAuthKey'] = this.generateRandomString(16)
     const url = `https://accounts.spotify.com/authorize?response_type=token&client_id=${encodeURIComponent(spotifyClientId)}&scope=${encodeURIComponent('user-read-currently-playing')}&redirect_uri=${encodeURIComponent(spotifyRedirectURI)}&state=${encodeURIComponent(localStorage['spotifyAuthKey'])}`
